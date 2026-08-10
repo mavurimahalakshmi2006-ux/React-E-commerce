@@ -63,10 +63,11 @@ function Signup() {
 
       <br />
 
-      <button type="submit">signup</button>
-      <p className="mt-3">
-  If already have an account? <a href="/Login">login</a>
-    </p>
+      <div>
+  <button type="submit">signup</button>
+  <span> If already have an account? </span>
+  <a href="/Login">Login</a>
+</div>
     </form>
   );
 }

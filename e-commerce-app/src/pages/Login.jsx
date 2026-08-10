@@ -78,10 +78,13 @@ function Login() {
         <br />
         <br />
 
-        <button type="submit">Login</button>
-        <p className="mt-3">
-  If you don't have an account? <a href="/signup">Signup</a>
-    </p>
+
+        <div>
+  <button type="submit">Login</button>
+  <span> If you don't have an account? </span>
+  <a href="/signup">Signup</a>
+</div>
+
       </form>
     </div>
   );
