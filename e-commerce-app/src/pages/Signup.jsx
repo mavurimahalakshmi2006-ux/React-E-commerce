@@ -1,0 +1,74 @@
+import { useState } from "react";
+
+function Signup() {
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  
+  const submit = (e) => {
+    console.log(e.target.value);
+    if(e.target.value===""){
+      alert(e.target.name,' is required');
+     return 
+    }
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const popup =()=> {
+    // Success
+    alert("Login Successful!");
+  };
+
+  return (
+    <form onSubmit={popup}>
+      <div>
+        <label>Username:</label>
+        <br />
+        <input
+          type="text"
+          name="username"
+          onChange={submit}
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label>Password:</label>
+        <br />
+        <input
+          type="password"
+          name="password"
+          onChange={submit}
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label>Confirm Password:</label>
+        <br />
+        <input
+          type="password"
+          name="confirmPassword"
+          onChange={submit}
+        />
+      </div>
+
+      <br />
+
+      <button type="submit">signup</button>
+      <p className="mt-3">
+  If already have an account? <a href="/Login">login</a>
+    </p>
+    </form>
+  );
+}
+
+export default Signup;
