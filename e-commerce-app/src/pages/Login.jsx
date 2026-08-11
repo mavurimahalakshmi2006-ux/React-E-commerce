@@ -80,9 +80,23 @@ function Login() {
 
 
         <div>
-  <button type="submit">Login</button>
+  <button
+  type="submit"
+  disabled={
+    formData.password === "" ||
+    formData.confirmPassword === ""
+  }
+>
+  Login
+</button>
   <span> If you don't have an account? </span>
   <a href="/signup">Signup</a>
+</div>
+
+<br/>
+<div>
+<span>if you forget password?</span>
+<a href="/Forgetpassword">Forgetpassword</a>
 </div>
 
       </form>

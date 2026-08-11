@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Signup() {
+function Singup() {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -8,32 +8,40 @@ function Signup() {
   });
 
   
-  const submit = (e) => {
-    console.log(e.target.value);
-    if(e.target.value===""){
-      alert(e.target.name,' is required');
-     return 
-    }
+  const onChangeInput = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const popup =()=> {
-    // Success
-    alert("Login Successful!");
+    const onSingup = (e) => {
+    e.preventDefault();
+
+    console.log("formData", formData);
+
+    if (formData.username === "") {
+      alert("Username is required");
+    } else if (formData.password === "") {
+      alert("Password is required");
+    }  else if (formData.password !== formData.confirmPassword) {
+      alert(" password not matched");
+    } else {
+      alert("Login Successful!");
+    }
   };
 
+  
+
   return (
-    <form onSubmit={popup}>
+    <form onSubmit={onSingup}>
       <div>
         <label>Username:</label>
         <br />
         <input
           type="text"
           name="username"
-          onChange={submit}
+          onChange={ onChangeInput}
         />
       </div>
 
@@ -45,7 +53,7 @@ function Signup() {
         <input
           type="password"
           name="password"
-          onChange={submit}
+          onChange={ onChangeInput}
         />
       </div>
 
@@ -57,14 +65,23 @@ function Signup() {
         <input
           type="password"
           name="confirmPassword"
-          onChange={submit}
+          onChange={ onChangeInput}
         />
       </div>
 
       <br />
 
       <div>
-  <button type="submit">signup</button>
+ <button
+  type="submit"
+  disabled={
+    formData.username === "" ||
+    formData.password === "" ||
+    formData.confirmPassword === ""
+  }
+>
+  Signup
+</button>
   <span> If already have an account? </span>
   <a href="/Login">Login</a>
 </div>
@@ -72,4 +89,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Singup;
