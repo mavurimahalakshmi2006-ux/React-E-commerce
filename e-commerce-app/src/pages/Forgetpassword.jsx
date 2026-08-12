@@ -32,8 +32,12 @@ function Forgetpassword() {
 
   
 
-  return (
-    <form onSubmit={ onforget }>
+ return (
+  <div className="container d-flex justify-content-center align-items-center min-vh-100">
+
+  <div className="card p-4 shadow" style={{ width: "400px" }}>
+
+    <form onSubmit={onforget}>
 
       <div>
         <label>New Password:</label>
@@ -60,18 +64,22 @@ function Forgetpassword() {
       <br />
 
       <div>
-  <button
-  type="submit"
-  disabled={
-    formData.Newpassword === "" ||
-    formData.confirmPassword === ""
-  }
->
-  Login
-</button>
-</div>
+        <button
+          type="submit"
+          disabled={
+            formData.Newpassword === "" ||
+            formData.confirmPassword === ""
+          }
+        >
+          Login
+        </button>
+      </div>
+
     </form>
-  );
+    </div>
+
+  </div>
+);
 }
 
 export default Forgetpassword;

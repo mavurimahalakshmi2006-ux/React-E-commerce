@@ -1,3 +1,37 @@
-.sample{
-  color:red;
+.input-box {
+  position: relative;
+  width: 100%;
+}
+
+.custom-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 60px 0 30px;
+  border: none;
+  outline: none;
+  border-radius: 35px;
+  background-color: #f1f2f5;
+  color: #78909c;
+  font-size: 20px;
+}
+
+.custom-input::placeholder {
+  color: #9aaab2;
+  opacity: 1;
+}
+
+.custom-input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: #f1f2f5;
+}
+
+.input-icon {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: #9aafb8;
 }

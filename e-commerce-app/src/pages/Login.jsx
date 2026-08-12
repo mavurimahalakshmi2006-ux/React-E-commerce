@@ -38,70 +38,76 @@ function Login() {
     }
   };
 
-  return (
-    <div>
-      <h2>Login Form</h2>
+ 
+    return (
+  <div className="container d-flex justify-content-center align-items-center min-vh-100">
 
-      <form onSubmit={onLogin}>
-        <div>
-          <label>Username:</label>{" "}
-          <span className="required_star">*</span>
-          <br />
+    <div
+      className="card shadow p-5"
+      style={{ width: "700px" }}
+    >
 
-          <input
-            type="text"
-            name="username"
-            onChange={onChangeInput}
-          />
-        </div>
+      <div>
+        <h1 className="text-start mb-4"
+        style={{ color: "green" }}
+        >Login</h1>
 
-        <br />
+        <form onSubmit={onLogin}>
 
-        <div>
-          <label>Password:</label>{" "}
-          <span className="required_star">*</span>
-          <br />
+          <div className="input-box mb-3">
+  <input
+    type="text"
+    name="username"
+    placeholder="Email"
+    onChange={onChangeInput}
+    className="custom-input"
+  />
+  <i className="bi bi-envelope input-icon"></i>
+</div>
 
-          <input
-            type="password"
-            name="password"
-            onChange={onChangeInput}
-          />
-        </div>
+<div className="input-box mb-3">
+  <input
+    type="password"
+    name="password"
+    placeholder="Password"
+    onChange={onChangeInput}
+    className="custom-input"
+  />
+  <i className="bi bi-key input-icon"></i>
+</div>
+  <div>
+  <a href="/Forgetpassword">
+        Forgetpassword?
+          </a>
+          </div>
+          <br/>
 
-        <br />
-
-        <span>
-          <i>* fields are mandatory</i>
-        </span>
-
-        <br />
-        <br />
-
-
-        <div>
+          <div className="text-center">
   <button
-  type="submit"
-  disabled={
-    formData.password === "" ||
-    formData.confirmPassword === ""
-  }
->
-  Login
-</button>
-  <span> If you don't have an account? </span>
-  <a href="/signup">Signup</a>
+    type="submit"
+    className="btn btn-primary px-5"
+    style={{height:"50px",width: "200px",borderRadius: "25px" }}
+    disabled={
+      formData.username === "" ||
+      formData.password === ""
+    }
+  >
+    Login
+  </button>
 </div>
 
-<br/>
-<div>
-<span>if you forget password?</span>
-<a href="/Forgetpassword">Forgetpassword</a>
-</div>
+          <br />
 
-      </form>
+          
+
+        </form>
+      </div>
+
     </div>
-  );
+
+  </div>
+);
+  
 }
 
 export default Login;
