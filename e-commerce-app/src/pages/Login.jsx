@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   // Form data state
@@ -60,7 +61,7 @@ function Login() {
     name="username"
     placeholder="Email"
     onChange={onChangeInput}
-    className="custom-input"
+    className="form-input"
   />
   <i className="bi bi-envelope input-icon"></i>
 </div>
@@ -71,12 +72,12 @@ function Login() {
     name="password"
     placeholder="Password"
     onChange={onChangeInput}
-    className="custom-input"
+    className="form-input"
   />
   <i className="bi bi-key input-icon"></i>
 </div>
   <div>
-  <a href="/Forgetpassword">
+  <a href="/forgetpassword">
         Forgetpassword?
           </a>
           </div>
